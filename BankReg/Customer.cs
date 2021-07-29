@@ -34,7 +34,7 @@ namespace BankReg
         public static bool operator !=(Figure first, Figure second)
         {
             return !first.Equals(second);
-        }*/
+        }*/ 
 
 
 
