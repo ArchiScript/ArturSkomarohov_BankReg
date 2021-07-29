@@ -17,35 +17,52 @@ namespace BankReg
             List<Customer> customers = new List<Customer>();
             customers.AddRange(new Customer[] { customer1, customer2, customer3, customer4, customer5 });
             //Console.WriteLine(customer5.Acc);
-            
 
+
+            Console.WriteLine("Здравствуйте, Вас приветсвует БанК, Введите ваше имя..");
             
-            while (true)
+            /*int lastId = customers.IndexOf(customer, item)*/
+            customers.Add(new Customer { Id = customers.Count + 1, Name = "Friedrich Bocom", Acc = 37082 });
+
+
+            foreach (Customer person in customers)
             {
-                Console.WriteLine("Здравствуйте, Вас приветсвует БанК, Введите ваше имя..");
-                string Name = Console.ReadLine();
-                foreach (var person in customers)
-                    
-                {
-                    bool status = customers.Contains(customer1);
-                    if (person.Name == Name)
-                    {
-                        status = true;
-                        Console.WriteLine("Вы уже зарегистрированы");
-                    }
-                    else { Console.WriteLine("Вы не зарегисрированы, введите ваши данные..");
 
-                        int NewId = customers.Add(new Customer { Id = customers.IndexOf, }) ;
-                        string NewName = Console.ReadLine();
+                Console.WriteLine(person.Id + person.Name);
 
-                            Console.WriteLine("Введите ");
-                    }
-
-                }
             }
+            //while (Console.ReadLine() != "x")
+            // {
+
+            //string Name = Console.ReadLine();
 
 
-            //int Account = Convert.ToInt32(Console.ReadLine());
+
+            /*foreach (var person in customers)
+                                {
+                bool status = customers.Contains(customer1);
+                if (person.Name == Name) 
+                {
+                    status = true;
+                    Console.WriteLine("Вы уже зарегистрированы");
+                }
+                else { Console.WriteLine("Вы не зарегисрированы, введите ваши данные..");
+
+                    int NewId = customers.Add(new Customer { Id = customers.IndexOf, }) ;
+                    string NewName = Console.ReadLine();
+
+                        Console.WriteLine("Введите ");
+                }
+
+            }*/
+
+
+
+
+            //}
+
+
+
 
 
         }
