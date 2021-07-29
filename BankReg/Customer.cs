@@ -11,9 +11,7 @@ namespace BankReg
         public int Acc { get; set; }
 
 
-
-
-      /*  public override bool Equals(object obj)
+        public override bool Equals(object obj)
         {
             if (obj == null)
             {
@@ -24,26 +22,21 @@ namespace BankReg
                 return false;
             }
             Customer result = (Customer)obj;
-            return Customer. == SideCount && result.SideLength == SideLength;
+            return result.Id == Id && result.Name == Name && result.Acc == Acc;
         }
 
-        public static bool operator ==(Figure first, Figure second)
+        public static bool operator ==(Customer first, Customer second)
         {
             return first.Equals(second);
         }
-        public static bool operator !=(Figure first, Figure second)
+        public static bool operator !=(Customer first, Customer second)
         {
             return !first.Equals(second);
-        }*/ 
 
 
-
-
-
+        }
 
     }
-
-
 
 
 
