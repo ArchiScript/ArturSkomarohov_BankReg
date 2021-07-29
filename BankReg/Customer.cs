@@ -6,10 +6,10 @@ namespace BankReg
 {
     public class Customer
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public int Acc { get; set; }
-
+        
 
         public override bool Equals(object obj)
         {
@@ -22,7 +22,7 @@ namespace BankReg
                 return false;
             }
             Customer result = (Customer)obj;
-            return result.Id == Id && result.Name == Name && result.Acc == Acc;
+            return result.Name == Name && result.Acc == Acc;
         }
 
         public static bool operator ==(Customer first, Customer second)

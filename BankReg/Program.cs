@@ -7,11 +7,11 @@ namespace BankReg
     {
         public static void Main(string[] args)
         {
-            Customer customer1 = new Customer { Id = 1, Name = "John Sommers", Acc = 12345 };
-            Customer customer2 = new Customer { Id = 2, Name = "Ivan Bubkin", Acc = 43535 };
-            Customer customer3 = new Customer { Id = 3, Name = "Artur Skomarohov", Acc = 54546 };
-            Customer customer4 = new Customer { Id = 4, Name = "Fedor Chukrov", Acc = 87855 };
-            Customer customer5 = new Customer { Id = 5, Name = "Alla Pugacheva", Acc = 58687 };
+            Customer customer1 = new Customer { Name = "John Sommers", Acc = 12345 };
+            Customer customer2 = new Customer { Name = "Ivan Bubkin", Acc = 43535 };
+            Customer customer3 = new Customer { Name = "Artur Skomarohov", Acc = 54546 };
+            Customer customer4 = new Customer { Name = "Fedor Chukrov", Acc = 87855 };
+            Customer customer5 = new Customer { Name = "Alla Pugacheva", Acc = 58687 };
 
 
             List<Customer> customers = new List<Customer>();
@@ -19,16 +19,40 @@ namespace BankReg
             //Console.WriteLine(customer5.Acc);
 
 
-            Console.WriteLine("Здравствуйте, Вас приветсвует БанК, Введите ваше имя..");
-            
-            /*int lastId = customers.IndexOf(customer, item)*/
-            customers.Add(new Customer { Id = customers.Count + 1, Name = "Friedrich Bocom", Acc = 37082 });
-
-
+            Console.WriteLine("Здравствуйте, Вас приветствует БанК, Введите ваше имя и фамилию..");
+            string inputName = Console.ReadLine().Trim();
+            Console.WriteLine("Теперь введите ваш номер счета");
+            int inputAcc = Convert.ToInt32(Console.ReadLine());
+            Customer inputCustomer = new Customer { Name = inputName, Acc = inputAcc };
             foreach (Customer person in customers)
             {
+                if (person.Equals(inputCustomer))
+                {
+                    Console.WriteLine("Вы " + inputName + "уже присутсвуете в базе");
+                    break;
+                }
+                else
+                {
+                    
+                    Console.WriteLine("Вас не было в базе, теперь Вы наш новый клиент.");
+                } 
+            }
+            customers.Add(inputCustomer);
+            /*if (customers.Contains(new Customer { Name = inputName, Acc = inputAcc }))
+            //if ((new Customer { Name = inputName, Acc = inputAcc }))
+            {
+                Console.WriteLine("Вы " + inputName + "уже присутсвуете в базе");
+            }
+            else { Console.WriteLine("Вас нет в базе!"); }*/
 
-                Console.WriteLine(person.Id + person.Name);
+            //customers.Add(new Customer { Name = "Friedrich Bocom", Acc = 37082 });
+
+            //bool status = customers.Equals(customer5);
+            //Console.WriteLine(status);
+            foreach (Customer person1 in customers)
+            {
+
+                Console.WriteLine((customers.IndexOf(person1) + 1) + " " + person1.Name + person1.Acc);
 
             }
             //while (Console.ReadLine() != "x")
