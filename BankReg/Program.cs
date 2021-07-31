@@ -25,8 +25,9 @@ namespace BankReg
                 Console.WriteLine("Введите ваше Имя и Фамилию..\n");
 
 
-                string NamePattern = "^[a-zA-Zа-яА-ЯёЁ'][a-zA-Zа-яА-Я-ёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$";
+                string NamePattern = @"^[A-ZА-ЯЁ][a-zа-яё]*?\s{1}[A-ZА-ЯЁ][a-zа-яё]*?$";
                 string AccPattern = "^[0-9]{5}$";
+                string YNPattern = "^[Дд]а$|^[Нн]ет$";
 
                 string inputName;
                 do
@@ -74,15 +75,29 @@ namespace BankReg
                 else
                 {
                     Console.WriteLine("Вас нет в базе! Добавить Вас в клиенты? да / нет");
-                    if (Console.ReadLine() == "да")
+
+
+                    string answer;
+                    do
                     {
-                        customers.Add(inputCustomer);
-                        Console.WriteLine("Поздравляем, Вы добавлены в Клиенты \n");
-                    }
-                    else { Console.WriteLine("До свидания. \n"); }
+
+                        answer = Console.ReadLine();
+                        bool isAnswerValid = Regex.Match(answer, YNPattern).Success;
+                        if (isAnswerValid == true)
+                        {
+                            if (answer == "да" || answer == "Да")
+                            {
+                                customers.Add(inputCustomer);
+                                Console.WriteLine("Поздравляем, Вы добавлены в Клиенты \n");
+                            }
+                            else { Console.WriteLine("До свидания"); }
+                        }
+
+                        else { Console.WriteLine("Неверный формат ввода, введите да / нет"); }
+                    } while (!Regex.Match(answer, YNPattern).Success);
+
 
                 }
-
 
                 foreach (Customer person1 in customers)
                 {
