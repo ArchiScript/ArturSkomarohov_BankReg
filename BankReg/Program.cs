@@ -14,16 +14,13 @@ namespace BankReg
             Customer customer4 = new Customer { Name = "Fedor Chukrov", Acc = 87855 };
             Customer customer5 = new Customer { Name = "Alla Pugacheva", Acc = 58687 };
 
-
             List<Customer> customers = new List<Customer>();
             customers.AddRange(new Customer[] { customer1, customer2, customer3, customer4, customer5 });
-
 
             Console.WriteLine("Здравствуйте, Вас приветствует БанК.. \n для продолжения нажмите Enter, для выхода x");
             while (Console.ReadLine() != "x")
             {
                 Console.WriteLine("Введите ваше Имя и Фамилию..\n");
-
 
                 string NamePattern = @"^[A-ZА-ЯЁ][a-zа-яё]*?\s{1}[A-ZА-ЯЁ][a-zа-яё]*?$";
                 string AccPattern = "^[0-9]{5}$";
@@ -46,7 +43,6 @@ namespace BankReg
                 }
                 while (!Regex.Match(inputName, NamePattern).Success);
 
-
                 string inputAcc;
                 do
                 {
@@ -66,7 +62,6 @@ namespace BankReg
 
                 Customer inputCustomer = new Customer { Name = inputName, Acc = inputAccInt };
 
-
                 //contains вызывает equals который мы уже переопределили
                 if (customers.Contains(inputCustomer))
                 {
@@ -75,12 +70,9 @@ namespace BankReg
                 else
                 {
                     Console.WriteLine("Вас нет в базе! Добавить Вас в клиенты? да / нет");
-
-
                     string answer;
                     do
                     {
-
                         answer = Console.ReadLine();
                         bool isAnswerValid = Regex.Match(answer, YNPattern).Success;
                         if (isAnswerValid == true)
@@ -96,7 +88,6 @@ namespace BankReg
                         else { Console.WriteLine("Неверный формат ввода, введите да / нет"); }
                     } while (!Regex.Match(answer, YNPattern).Success);
 
-
                 }
 
                 foreach (Customer person1 in customers)
@@ -104,7 +95,6 @@ namespace BankReg
                     Console.WriteLine((customers.IndexOf(person1) + 1) + $" {person1.Name} {person1.Acc}");
                 }
             }
-
         }
     }
 }

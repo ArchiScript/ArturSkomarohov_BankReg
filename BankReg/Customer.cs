@@ -6,10 +6,10 @@ namespace BankReg
 {
     public class Customer
     {
-        
+
         public string Name { get; set; }
         public int Acc { get; set; }
-        
+
 
         public override bool Equals(object obj)
         {
@@ -32,10 +32,11 @@ namespace BankReg
         public static bool operator !=(Customer first, Customer second)
         {
             return !first.Equals(second);
-
-
         }
-
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 
 
