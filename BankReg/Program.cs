@@ -89,8 +89,7 @@ namespace BankReg
                     } while (!Regex.Match(answer, YNPattern).Success);
 
                 }
-
-                foreach (Customer person1 in customers)
+                 foreach (Customer person1 in customers)
                 {
                     Console.WriteLine((customers.IndexOf(person1) + 1) + $" {person1.Name} {person1.Acc}");
                 }
