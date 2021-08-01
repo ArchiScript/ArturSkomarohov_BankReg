@@ -19,33 +19,7 @@ namespace BankReg
             //Console.WriteLine(customer5.Acc);
             
 
-            
-            while (true)
-            {
-                Console.WriteLine("Здравствуйте, Вас приветсвует БанК, Введите ваше имя..");
-                string Name = Console.ReadLine();
-                foreach (var person in customers)
-                    
-                {
-                    bool status = customers.Contains(customer1);
-                    if (person.Name == Name)
-                    {
-                        status = true;
-                        Console.WriteLine("Вы уже зарегистрированы");
-                    }
-                    else { Console.WriteLine("Вы не зарегисрированы, введите ваши данные..");
-
-                        int NewId = customers.Add(new Customer { Id = customers.IndexOf, }) ;
-                        string NewName = Console.ReadLine();
-
-                            Console.WriteLine("Введите ");
-                    }
-
-                }
-            }
-
-
-            //int Account = Convert.ToInt32(Console.ReadLine());
+           
 
 
         }
